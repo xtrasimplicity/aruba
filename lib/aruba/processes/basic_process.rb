@@ -121,8 +121,6 @@ module Aruba
 
       alias to_s inspect
 
-      private
-
       def command
         Shellwords.split(commandline).first
       end
@@ -132,6 +130,8 @@ module Aruba
 
         []
       end
+
+      private
 
       def truncate(string, max_length)
         return string if string.length <= max_length
