@@ -2,14 +2,14 @@ require 'aruba/generators/script_file'
 
 When(/^I run `([^`]*)`$/)do |cmd|
   cmd = sanitize_text(cmd)
-  run_command_and_stop(cmd, :fail_on_error => false)
+  run_command_and_stop(cmd, fail_on_error: false)
 end
 
 ## I successfully run `echo -n "Hello"`
 ## I successfully run `sleep 29` for up to 30 seconds
 When(/^I successfully run `(.*?)`(?: for up to (\d+) seconds)?$/)do |cmd, secs|
   cmd = sanitize_text(cmd)
-  run_command_and_stop(cmd, :fail_on_error => true, :exit_timeout => secs && secs.to_i)
+  run_command_and_stop(cmd, fail_on_error: true, exit_timeout: secs && secs.to_i)
 end
 
 When(/^I run the following (?:commands|script)(?: (?:with|in) `([^`]+)`)?:$/) do |shell, commands|
@@ -18,8 +18,8 @@ When(/^I run the following (?:commands|script)(?: (?:with|in) `([^`]+)`)?:$/) do
   Aruba.platform.mkdir(expand_path('bin'))
   shell ||= Aruba.platform.default_shell
 
-  Aruba::ScriptFile.new(:interpreter => shell, :content => commands,
-                        :path => expand_path('bin/myscript')).call
+  Aruba::ScriptFile.new(interpreter: shell, content: commands,
+                        path: expand_path('bin/myscript')).call
   step 'I run `myscript`'
 end
 
@@ -69,7 +69,7 @@ When(/^I stop the command(?: started last)? if (output|stdout|stderr) contains:$
   begin
     Timeout.timeout(aruba.config.exit_timeout) do
       loop do
-        output = last_command_started.public_send channel.to_sym, :wait_for_io => 0
+        output = last_command_started.public_send channel.to_sym, wait_for_io: 0
 
         output   = sanitize_text(output)
         expected = sanitize_text(expected)

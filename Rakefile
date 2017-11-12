@@ -6,10 +6,10 @@ require 'aruba/platform'
 require 'bundler'
 Bundler.setup
 
-task :default => :test
+task default: :test
 
 desc 'Run the whole test suite. Any failure will stop rake going on'
-task :test => %w(lint:travis lint:coding_guidelines lint:licenses test:rspec test:cucumber test:cucumber_wip)
+task test: %w(lint:travis lint:coding_guidelines lint:licenses test:rspec test:cucumber test:cucumber_wip)
 
 require 'cucumber/rake/task'
 require 'rspec/core/rake_task'
@@ -68,8 +68,8 @@ end
 namespace :docker do
   desc 'Build docker image'
   task :build, :cache, :version do |_, args|
-    args.with_defaults(:version => 'latest')
-    args.with_defaults(:cache => true)
+    args.with_defaults(version: 'latest')
+    args.with_defaults(cache: true)
 
     docker_compose_file = Aruba::DockerComposeFile.new(File.expand_path('../docker-compose.yml', __FILE__))
     docker_run_instance = Aruba::DockerRunInstance.new(docker_compose_file, :base)

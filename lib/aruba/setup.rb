@@ -24,7 +24,7 @@ module Aruba
     private
 
     def working_directory
-      Aruba.platform.rm File.join(runtime.config.root_directory, runtime.config.working_directory), :force => true
+      Aruba.platform.rm File.join(runtime.config.root_directory, runtime.config.working_directory), force: true
       Aruba.platform.mkdir File.join(runtime.config.root_directory, runtime.config.working_directory)
       Aruba.platform.chdir runtime.config.root_directory
     end
