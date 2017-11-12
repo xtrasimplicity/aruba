@@ -187,69 +187,6 @@ Style/Semicolon:
 Style/SignalException:
   Enabled: false
 
-# Offense count: 14
-# Cop supports --auto-correct.
-Style/SpaceAfterComma:
-  Exclude:
-    - 'lib/aruba/matchers/file/have_same_file_content.rb'
-    - 'lib/aruba/platforms/filesystem_status.rb'
-    - 'lib/aruba/platforms/simple_table.rb'
-    - 'lib/aruba/platforms/windows_environment_variables.rb'
-    - 'lib/aruba/platforms/windows_which.rb'
-    - 'spec/aruba/api_spec.rb'
-    - 'spec/aruba/hooks_spec.rb'
-
-# Offense count: 5
-# Cop supports --auto-correct.
-Style/SpaceAroundKeyword:
-  Exclude:
-    - 'lib/aruba/cucumber/command.rb'
-    - 'lib/aruba/cucumber/environment.rb'
-
-# Offense count: 7
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, SupportedStyles.
-# SupportedStyles: space, no_space
-Style/SpaceBeforeBlockBraces:
-  Exclude:
-    - 'features/step_definitions/aruba_dev_steps.rb'
-    - 'lib/aruba/platforms/aruba_fixed_size_file_creator.rb'
-    - 'spec/aruba/api_spec.rb'
-    - 'spec/aruba/in_config_wrapper_spec.rb'
-    - 'spec/support/shared_examples/configuration.rb'
-
-# Offense count: 28
-# Cop supports --auto-correct.
-Style/SpaceBeforeComma:
-  Exclude:
-    - 'lib/aruba/colorizer.rb'
-    - 'spec/aruba/api_spec.rb'
-
-# Offense count: 10
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, SupportedStyles, EnforcedStyleForEmptyBraces, SpaceBeforeBlockParameters.
-# SupportedStyles: space, no_space
-Style/SpaceInsideBlockBraces:
-  Exclude:
-    - 'features/step_definitions/aruba_dev_steps.rb'
-    - 'spec/aruba/api_spec.rb'
-    - 'spec/aruba/processes/spawn_process_spec.rb'
-    - 'spec/support/shared_examples/configuration.rb'
-
-# Offense count: 56
-# Cop supports --auto-correct.
-Style/SpaceInsideBrackets:
-  Exclude:
-    - 'lib/aruba/colorizer.rb'
-
-# Offense count: 5
-# Cop supports --auto-correct.
-Style/SpaceInsideParens:
-  Exclude:
-    - 'lib/aruba/platforms/unix_environment_variables.rb'
-    - 'lib/aruba/platforms/windows_command_string.rb'
-    - 'spec/aruba/api_spec.rb'
-
 # Offense count: 117
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyle, SupportedStyles, ConsistentQuotesInMultiline.
