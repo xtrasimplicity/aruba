@@ -41,6 +41,21 @@ RSpec.describe 'Command Matchers' do
     end
   end
 
+  describe '#to_have_executed_successfully' do
+    let(:cmd) { 'true' }
+
+    before(:each) { run_command(cmd) }
+
+    context 'when has exit 0' do
+      it { expect(last_command_started).to have_executed_successfully }
+    end
+
+    context 'when has exit 0' do
+      let(:cmd) { 'false' }
+      it { expect(last_command_started).not_to have_executed_successfully }
+    end
+  end
+
   describe '#to_have_output' do
     let(:cmd) { "echo #{output}" }
     let(:output) { 'hello world' }
