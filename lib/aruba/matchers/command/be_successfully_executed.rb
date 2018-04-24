@@ -30,3 +30,4 @@ RSpec::Matchers.define :be_successfully_executed do
 end
 
 RSpec::Matchers.define_negated_matcher :have_failed_running, :be_successfully_executed
+RSpec::Matchers.alias_matcher :have_executed_successfully, :be_successfully_executed
